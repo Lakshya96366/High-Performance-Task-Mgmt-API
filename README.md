@@ -26,9 +26,4 @@ A high-performance, scalable RESTful API built with **FastAPI** and **SQLAlchemy
 
 *Note: Interactive API documentation is automatically generated and available at `/docs` (Swagger UI) and `/redoc` when the server is running.*
 
-## ⚙️ Setup & Installation
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/Lakshya96366/Cloud-Native-Task-Mgmt-API.git
-   cd Cloud-Native-Task-Mgmt-API
