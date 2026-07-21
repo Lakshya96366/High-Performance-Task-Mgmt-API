@@ -5,8 +5,16 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, Session
 
 # Database Setup (Using SQLite for instant local running)
-SQLALCHEMY_DATABASE_URL = "sqlite:///./tasks.db"
-engine = create_engine(SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False})
+import os
+from dotenv import load_dotenv
+
+load_dotenv()  # This loads the .env file
+
+# Get the database URL from the environment variable
+SQLALCHEMY_DATABASE_URL = os.getenv("DATABASE_URL")
+
+# Create the engine (removed the SQLite-specific check_same_thread argument)
+engine = create_engine(SQLALCHEMY_DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 
